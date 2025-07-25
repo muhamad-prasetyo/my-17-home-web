@@ -5,7 +5,7 @@
  */
 
 // Konfigurasi
-$secret = 'your-secret-key-here'; // Ganti dengan secret key Anda
+$secret = 'MY17_AUTO_DEPLOY_SECRET_2025'; // Secret key untuk keamanan webhook
 $project_path = '/var/www/html/laravel-my17'; // Path ke project Laravel
 
 // Validasi request dari GitHub
