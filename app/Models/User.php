@@ -9,10 +9,15 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Filament\Models\Contracts\HasAvatar;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 use App\Models\Schedule;
 use App\Models\Attendance;
 use App\Models\UserDeviceToken;
 use App\Models\TransferRequest;
+use App\Models\LeaveRequest;
+use App\Models\UserDayOff;
+use App\Models\Permission;
 use Illuminate\Support\Facades\Cache;
 use Carbon\Carbon;
 use Illuminate\Notifications\DatabaseNotification;
@@ -21,7 +26,7 @@ use Illuminate\Notifications\DatabaseNotification;
  * @property \Illuminate\Database\Eloquent\Relations\MorphMany $notifications
  * @method \Illuminate\Database\Eloquent\Builder unreadNotifications()
  */
-class User extends Authenticatable implements HasAvatar, MustVerifyEmail
+class User extends Authenticatable implements HasAvatar, MustVerifyEmail, FilamentUser
 {
     use HasFactory, Notifiable, HasApiTokens, HasRoles;
 
@@ -228,6 +233,31 @@ class User extends Authenticatable implements HasAvatar, MustVerifyEmail
     public function getFilamentAvatarUrl(): ?string
     {
         return $this->avatar_url;
+    }
+
+    /**
+     * Determine if the user can access the given Filament panel.
+     * Required for production environments.
+     */
+    public function canAccessPanel(Panel $panel): bool
+    {
+        // Option 1: Check if user has admin role or specific permissions
+        if ($this->hasRole(['super_admin', 'admin', 'panel_user'])) {
+            return true;
+        }
+        
+        // Option 2: Check if user is explicitly approved for panel access
+        if (isset($this->is_approved) && $this->is_approved) {
+            return true;
+        }
+        
+        // Option 3: Allow all users with verified email (semua email bisa akses)
+        if ($this->hasVerifiedEmail()) {
+            return true;
+        }
+        
+        // Option 4: Fallback - allow all authenticated users (paling permisif)
+        return true;
     }
 
     /**

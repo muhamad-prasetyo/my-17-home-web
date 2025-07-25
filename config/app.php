@@ -56,6 +56,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Company Domain
+    |--------------------------------------------------------------------------
+    |
+    | This value is used to determine which email domains are allowed to
+    | access the Filament admin panel. Set this to your company domain.
+    |
+    */
+
+    'company_domain' => env('APP_COMPANY_DOMAIN', 'bakmi.com'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
     |
