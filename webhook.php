@@ -6,7 +6,7 @@
 
 // Konfigurasi
 $secret = 'MY17_AUTO_DEPLOY_SECRET_2025'; // Secret key untuk keamanan webhook
-$project_path = '/var/www/html/laravel-my17'; // Path ke project Laravel
+$project_path = '/home/my17-absensi/htdocs/my17.web.id'; // Path CloudPanel project
 
 // Validasi request dari GitHub
 function validate_github_webhook($payload, $signature, $secret) {
@@ -49,8 +49,8 @@ if (isset($data['ref']) && $data['ref'] === 'refs/heads/main') {
         "php artisan route:cache", 
         "php artisan view:cache",
         "php artisan storage:link",
-        "sudo chown -R www-data:www-data storage bootstrap/cache",
-        "sudo chmod -R 775 storage bootstrap/cache"
+        "chown -R my17-absensi:my17-absensi .",
+        "chmod -R 755 storage bootstrap/cache"
     ];
     
     $command = implode(' && ', $commands);
