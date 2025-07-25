@@ -238,9 +238,9 @@
             </div>
         </div>
 
-        <!--[if BLOCK]><![endif]--><?php if($notifications && $notifications->count() > 0): ?>
+        <?php if($notifications && $notifications->count() > 0): ?>
             <div class="grid gap-4">
-                <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $__currentLoopData = $notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php
                         $url = $this->getNotificationUrl($notification);
                         $icon = $this->getNotificationIcon($notification);
@@ -275,7 +275,7 @@
 
                                 </p>
                                 
-                                <!--[if BLOCK]><![endif]--><?php if($url): ?>
+                                <?php if($url): ?>
                                     <div class="mt-3">
                                         <a href="<?php echo e($url); ?>" 
                                            class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-<?php echo e($color); ?>-700 bg-<?php echo e($color); ?>-100 dark:text-<?php echo e($color); ?>-300 dark:bg-<?php echo e($color); ?>-900 rounded-md hover:bg-<?php echo e($color); ?>-200 dark:hover:bg-<?php echo e($color); ?>-800 transition-colors duration-200">
@@ -302,18 +302,18 @@
 <?php endif; ?>
                                         </a>
                                     </div>
-                                <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+                                <?php endif; ?>
                             </div>
                             
                             <!-- Status indicator -->
-                            <!--[if BLOCK]><![endif]--><?php if($notification->read_at === null): ?>
+                            <?php if($notification->read_at === null): ?>
                                 <div class="flex-shrink-0">
                                     <div class="w-2 h-2 bg-<?php echo e($color); ?>-500 rounded-full"></div>
                                 </div>
-                            <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+                            <?php endif; ?>
                         </div>
                     </div>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
         <?php else: ?>
             <div class="text-center py-12">
@@ -342,7 +342,7 @@
                     Belum ada notifikasi yang masuk.
                 </p>
             </div>
-        <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+        <?php endif; ?>
     </div>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

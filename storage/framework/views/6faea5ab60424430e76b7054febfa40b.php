@@ -2,8 +2,8 @@
     use Filament\Support\Facades\FilamentView;
 ?>
 
-<!--[if BLOCK]><![endif]--><?php if($this->hasUnsavedDataChangesAlert()): ?>
-    <!--[if BLOCK]><![endif]--><?php if(FilamentView::hasSpaMode()): ?>
+<?php if($this->hasUnsavedDataChangesAlert()): ?>
+    <?php if(FilamentView::hasSpaMode()): ?>
             <?php
         $__scriptKey = '1759064701-0';
         ob_start();
@@ -78,6 +78,6 @@
 
         \Livewire\store($this)->push('scripts', $__output, $__scriptKey)
     ?>
-    <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
-<?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+    <?php endif; ?>
+<?php endif; ?>
 <?php /**PATH /Users/muhamadprasetyo/Project-bakmi/absensi-bakmi/effiwork17-lastupdate/laravel-absensi-backend-master/resources/views/vendor/filament-panels/components/page/unsaved-data-changes-alert.blade.php ENDPATH**/ ?>

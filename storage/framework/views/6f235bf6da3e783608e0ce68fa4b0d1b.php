@@ -20,7 +20,7 @@
 <?php $component->withAttributes([]); ?>
         <h2 class="text-lg font-bold tracking-tight">Present Employees</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <!--[if BLOCK]><![endif]--><?php $__empty_1 = true; $__currentLoopData = $this->presentEmployees; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $employee): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+            <?php $__empty_1 = true; $__currentLoopData = $this->presentEmployees; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $employee): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
                 <div class="flex items-center space-x-3">
                     <img src="<?php echo e($employee->avatar_url); ?>" alt="<?php echo e($employee->name); ?>" class="w-10 h-10 rounded-full object-cover">
                     <div>
@@ -30,7 +30,7 @@
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                 <p>No employees present today.</p>
-            <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+            <?php endif; ?>
         </div>
      <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

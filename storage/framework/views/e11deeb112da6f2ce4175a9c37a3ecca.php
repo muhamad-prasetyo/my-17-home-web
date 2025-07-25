@@ -60,7 +60,7 @@ unset($__defined_vars); ?>
         };
     ?>
 
-    <!--[if BLOCK]><![endif]--><?php if((count($managers) > 1) || $content): ?>
+    <?php if((count($managers) > 1) || $content): ?>
         <?php if (isset($component)) { $__componentOriginal447636fe67a19f9c79619fb5a3c0c28d = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal447636fe67a19f9c79619fb5a3c0c28d = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'filament::components.tabs.index','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -82,7 +82,7 @@ unset($__defined_vars); ?>
                 }
             ?>
 
-            <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $tabs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tabKey => $manager): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php $__currentLoopData = $tabs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tabKey => $manager): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <?php
                     $tabKey = strval($tabKey);
                     $isGroup = $manager instanceof \Filament\Resources\RelationManagers\RelationGroup;
@@ -105,13 +105,13 @@ unset($__defined_vars); ?>
 <?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
 <?php endif; ?>
 <?php $component->withAttributes(['active' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($activeManager === $tabKey),'badge' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(filled($tabKey) ? ($isGroup ? $manager->getBadge() : $manager::getBadge($ownerRecord, $pageClass)) : null),'badge-color' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(filled($tabKey) ? ($isGroup ? $manager->getBadgeColor() : $manager::getBadgeColor($ownerRecord, $pageClass)) : null),'badge-tooltip' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(filled($tabKey) ? ($isGroup ? $manager->getBadgeTooltip() : $manager::getBadgeTooltip($ownerRecord, $pageClass)) : null),'icon' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(filled($tabKey) ? ($isGroup ? $manager->getIcon() : $manager::getIcon($ownerRecord, $pageClass)) : ($contentTabIcon ?? null)),'icon-position' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(filled($tabKey) ? ($isGroup ? $manager->getIconPosition() : $manager::getIconPosition($ownerRecord, $pageClass)) : ($contentTabIconPosition ?? null)),'wire:click' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute('$set(\'activeRelationManager\', ' . (filled($tabKey) ? ('\'' . $tabKey . '\'') : 'null') . ')')]); ?>
-                    <!--[if BLOCK]><![endif]--><?php if(filled($tabKey)): ?>
+                    <?php if(filled($tabKey)): ?>
                         <?php echo e($isGroup ? $manager->getLabel() : $manager::getTitle($ownerRecord, $pageClass)); ?>
 
                     <?php elseif($content): ?>
                         <?php echo e($contentTabLabel); ?>
 
-                    <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+                    <?php endif; ?>
                  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal35d4caf141547fb7d125e4ebd3c1b66f)): ?>
@@ -122,7 +122,7 @@ unset($__defined_vars); ?>
 <?php $component = $__componentOriginal35d4caf141547fb7d125e4ebd3c1b66f; ?>
 <?php unset($__componentOriginal35d4caf141547fb7d125e4ebd3c1b66f); ?>
 <?php endif; ?>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
          <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal447636fe67a19f9c79619fb5a3c0c28d)): ?>
@@ -133,9 +133,9 @@ unset($__defined_vars); ?>
 <?php $component = $__componentOriginal447636fe67a19f9c79619fb5a3c0c28d; ?>
 <?php unset($__componentOriginal447636fe67a19f9c79619fb5a3c0c28d); ?>
 <?php endif; ?>
-    <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+    <?php endif; ?>
 
-    <!--[if BLOCK]><![endif]--><?php if(filled($activeManager) && isset($managers[$activeManager])): ?>
+    <?php if(filled($activeManager) && isset($managers[$activeManager])): ?>
         <div
             <?php if(count($managers) > 1): ?>
                 id="relationManager<?php echo e(ucfirst($activeManager)); ?>"
@@ -152,8 +152,8 @@ unset($__defined_vars); ?>
                 }
             ?>
 
-            <!--[if BLOCK]><![endif]--><?php if($managers[$activeManager] instanceof \Filament\Resources\RelationManagers\RelationGroup): ?>
-                <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $managers[$activeManager]->ownerRecord($ownerRecord)->pageClass($pageClass)->getManagers(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $groupedManagerKey => $groupedManager): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if($managers[$activeManager] instanceof \Filament\Resources\RelationManagers\RelationGroup): ?>
+                <?php $__currentLoopData = $managers[$activeManager]->ownerRecord($ownerRecord)->pageClass($pageClass)->getManagers(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $groupedManagerKey => $groupedManager): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php
                         $normalizedGroupedManagerClass = $normalizeRelationManagerClass($groupedManager);
                     ?>
@@ -175,7 +175,7 @@ unset($__params);
 unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             <?php else: ?>
                 <?php
                     $manager = $managers[$activeManager];
@@ -199,11 +199,11 @@ unset($__params);
 unset($__split);
 if (isset($__slots)) unset($__slots);
 ?>
-            <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+            <?php endif; ?>
         </div>
     <?php elseif($content): ?>
         <?php echo e($content); ?>
 
-    <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+    <?php endif; ?>
 </div>
 <?php /**PATH /Users/muhamadprasetyo/Project-bakmi/absensi-bakmi/effiwork17-lastupdate/laravel-absensi-backend-master/resources/views/vendor/filament-panels/components/resources/relation-managers.blade.php ENDPATH**/ ?>

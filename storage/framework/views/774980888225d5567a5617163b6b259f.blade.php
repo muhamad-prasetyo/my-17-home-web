@@ -1,1 +1,0 @@
-@livewire("custom-notification-bell")
