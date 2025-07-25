@@ -1,0 +1,10 @@
+# Enable all HTTP methods
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+
+# Allow POST method
+<Limit GET POST PUT DELETE OPTIONS>
+    Allow from all
+</Limit>

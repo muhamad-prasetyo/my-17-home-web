@@ -4,6 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middleware\OptimizePerformance;
+use App\Http\Middleware\VerifyCsrfToken;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -15,6 +16,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         // Apply OptimizePerformance middleware to all API routes
         $middleware->api(OptimizePerformance::class);
+        
+        // Override default VerifyCsrfToken with our custom implementation
+        $middleware->replace('csrf', VerifyCsrfToken::class);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
