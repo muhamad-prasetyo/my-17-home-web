@@ -39,7 +39,7 @@ $data = json_decode($payload, true);
 if (isset($data['ref']) && $data['ref'] === 'refs/heads/main') {
     log_message('Push to main branch detected, starting deployment...');
     
-    // Execute deploy commands
+    // Execute deploy commands for Laravel Filament
     $commands = [
         "cd $project_path",
         "git pull origin main",
@@ -49,8 +49,13 @@ if (isset($data['ref']) && $data['ref'] === 'refs/heads/main') {
         "php artisan route:cache", 
         "php artisan view:cache",
         "php artisan storage:link",
+        "php artisan filament:cache-components", // Cache Filament components
+        "php artisan optimize", // Laravel optimization
+        "npm ci --production", // Install production npm dependencies
+        "npm run build", // Build assets with Vite
         "chown -R my17-absensi:my17-absensi .",
-        "chmod -R 755 storage bootstrap/cache"
+        "chmod -R 775 storage bootstrap/cache", // Laravel needs 775 for storage
+        "chmod -R 755 public" // Public directory permissions
     ];
     
     $command = implode(' && ', $commands);
