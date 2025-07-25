@@ -1,9 +1,11 @@
 {
 	"folders": [
 		{
+			"name": "effiwork17-lastupdate",
 			"path": "../../effiwork17-lastupdate"
 		},
 		{
+			"name": "laravel-absensi-backend-master",
 			"path": "."
 		}
 	],

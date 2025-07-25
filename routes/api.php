@@ -34,6 +34,28 @@ use Illuminate\Support\Facades\URL;
 |
 */
 
+// Test endpoint untuk koneksi Flutter
+Route::get('/test', function () {
+    return response()->json([
+        'status' => 'success',
+        'message' => 'API Laravel berjalan dengan baik!',
+        'timestamp' => now(),
+        'server' => request()->getHost(),
+        'app_name' => config('app.name'),
+    ]);
+});
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "api" middleware group. Make something great!
+|
+*/
+
 // Auth routes
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
