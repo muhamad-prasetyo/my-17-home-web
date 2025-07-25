@@ -190,6 +190,24 @@ return [
     |--------------------------------------------------------------------------
     |
     | This option determines how your cookies behave when cross-site requests
+<<<<<<< HEAD
+=======
+    | are initiated, and can be used to mitigate CSRF attacks. By default
+    | we will set this value to "lax" since this is a secure default.
+    |
+    | Supported: "lax", "strict", "none", null
+    |
+    */
+
+    'same_site' => env('SESSION_SAME_SITE', 'lax'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Same-Site Cookies
+    |--------------------------------------------------------------------------
+    |
+    | This option determines how your cookies behave when cross-site requests
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
     | take place, and can be used to mitigate CSRF attacks. By default, we
     | will set this value to "lax" to permit secure cross-site requests.
     |

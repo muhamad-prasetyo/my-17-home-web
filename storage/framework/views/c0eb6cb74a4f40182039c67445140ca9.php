@@ -238,9 +238,15 @@
             </div>
         </div>
 
+<<<<<<< HEAD
         <!--[if BLOCK]><![endif]--><?php if($notifications && $notifications->count() > 0): ?>
             <div class="grid gap-4">
                 <!--[if BLOCK]><![endif]--><?php $__currentLoopData = $notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+=======
+        <?php if($notifications && $notifications->count() > 0): ?>
+            <div class="grid gap-4">
+                <?php $__currentLoopData = $notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
                     <?php
                         $url = $this->getNotificationUrl($notification);
                         $icon = $this->getNotificationIcon($notification);
@@ -275,7 +281,11 @@
 
                                 </p>
                                 
+<<<<<<< HEAD
                                 <!--[if BLOCK]><![endif]--><?php if($url): ?>
+=======
+                                <?php if($url): ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
                                     <div class="mt-3">
                                         <a href="<?php echo e($url); ?>" 
                                            class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-<?php echo e($color); ?>-700 bg-<?php echo e($color); ?>-100 dark:text-<?php echo e($color); ?>-300 dark:bg-<?php echo e($color); ?>-900 rounded-md hover:bg-<?php echo e($color); ?>-200 dark:hover:bg-<?php echo e($color); ?>-800 transition-colors duration-200">
@@ -302,6 +312,7 @@
 <?php endif; ?>
                                         </a>
                                     </div>
+<<<<<<< HEAD
                                 <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
                             </div>
                             
@@ -314,6 +325,20 @@
                         </div>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
+=======
+                                <?php endif; ?>
+                            </div>
+                            
+                            <!-- Status indicator -->
+                            <?php if($notification->read_at === null): ?>
+                                <div class="flex-shrink-0">
+                                    <div class="w-2 h-2 bg-<?php echo e($color); ?>-500 rounded-full"></div>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
             </div>
         <?php else: ?>
             <div class="text-center py-12">
@@ -342,7 +367,11 @@
                     Belum ada notifikasi yang masuk.
                 </p>
             </div>
+<<<<<<< HEAD
         <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+=======
+        <?php endif; ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
     </div>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

@@ -17,6 +17,9 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+<<<<<<< HEAD
 .env
 .env.local
 .env.production
+=======
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff

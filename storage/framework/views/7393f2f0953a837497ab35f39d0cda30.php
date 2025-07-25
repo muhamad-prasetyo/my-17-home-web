@@ -36,7 +36,11 @@ foreach ($attributes->all() as $__key => $__value) {
 
 unset($__defined_vars); ?>
 
+<<<<<<< HEAD
 <!--[if BLOCK]><![endif]--><?php if(count($actions)): ?>
+=======
+<?php if(count($actions)): ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
     <div
         <?php if($this->areFormActionsSticky()): ?>
             x-data="{
@@ -78,5 +82,9 @@ unset($__defined_vars); ?>
 <?php unset($__componentOriginal59d80b1aec4ae4c914a3e52dede19504); ?>
 <?php endif; ?>
     </div>
+<<<<<<< HEAD
 <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+=======
+<?php endif; ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
 <?php /**PATH /Users/muhamadprasetyo/Project-bakmi/absensi-bakmi/effiwork17-lastupdate/laravel-absensi-backend-master/resources/views/vendor/filament-panels/components/form/actions.blade.php ENDPATH**/ ?>

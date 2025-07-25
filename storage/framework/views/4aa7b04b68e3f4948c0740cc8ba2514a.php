@@ -50,7 +50,11 @@
             'total' => 0,
         ];
     ?>
+<<<<<<< HEAD
     <!--[if BLOCK]><![endif]--><?php if($userId): ?>
+=======
+    <?php if($userId): ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
     <div class="mb-4 p-3 rounded bg-gray-100 dark:bg-gray-800 flex flex-wrap gap-6 items-center">
         <span class="font-semibold">Rekap Bulan <?php echo e($bulanTahun); ?>:</span>
         <span>Hadir: <span class="font-bold text-green-600"><?php echo e($rekap['hadir']); ?></span></span>
@@ -60,7 +64,11 @@
         <span>Alfa: <span class="font-bold text-red-600"><?php echo e($rekap['alfa']); ?></span></span>
         <span>Total: <span class="font-bold text-blue-600"><?php echo e($rekap['total']); ?></span></span>
     </div>
+<<<<<<< HEAD
     <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+=======
+    <?php endif; ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
     <style>
     /* Tombol aktif Export Data (mode light) */
     .btn-export-data {
@@ -107,12 +115,20 @@
                 <label for="user_id" class="block mb-1 font-medium">Cari Karyawan:</label>
                 <select id="user_id" name="user_id" class="form-select w-full max-w-xs" style="width: 100%;" onchange="this.form.submit()">
                     <option value="">-- Pilih Karyawan --</option>
+<<<<<<< HEAD
                     <!--[if BLOCK]><![endif]--><?php $__currentLoopData = \App\Models\User::orderBy('name')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+=======
+                    <?php $__currentLoopData = \App\Models\User::orderBy('name')->get(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
                         <option value="<?php echo e($user->id); ?>" <?php echo e(request('user_id') == $user->id ? 'selected' : ''); ?>>
                             <?php echo e($user->name); ?>
 
                         </option>
+<<<<<<< HEAD
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><!--[if ENDBLOCK]><![endif]-->
+=======
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
                 </select>
             </form>
         </div>
@@ -160,7 +176,11 @@
 
     <!-- Wrapper untuk export gambar kalender dan rekap (hanya satu rekap di sini) -->
     <div id="calendar-export-area">
+<<<<<<< HEAD
         <!--[if BLOCK]><![endif]--><?php if($userId): ?>
+=======
+        <?php if($userId): ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
         <div class="mb-4 p-4 rounded rekap-export flex flex-wrap gap-6 items-center" style="font-size:1.1em; margin-top:32px;">
             <span class="font-semibold">Rekap Bulan <?php echo e($bulanTahun); ?>:</span>
             <span>Hadir: <span style="color:#16a34a;font-weight:bold"><?php echo e($rekap['hadir']); ?></span></span>
@@ -170,7 +190,11 @@
             <span>Alfa: <span style="color:#000;font-weight:bold"><?php echo e($rekap['alfa']); ?></span></span>
             <span>Total: <span style="color:#111827;font-weight:bold"><?php echo e($rekap['total']); ?></span></span>
         </div>
+<<<<<<< HEAD
         <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+=======
+        <?php endif; ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
         <h3 style="text-align:center; font-size:1.5em; margin-bottom:8px;">
             <?php echo e($bulanTahun); ?>
 

@@ -21,9 +21,15 @@
 <?php $component = $__componentOriginal643fe1b47aec0b76658e1a0200b34b2c; ?>
 <?php unset($__componentOriginal643fe1b47aec0b76658e1a0200b34b2c); ?>
 <?php endif; ?>
+<<<<<<< HEAD
         <!--[if BLOCK]><![endif]--><?php if($unreadCount > 0): ?>
             <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-600 rounded-full"><?php echo e($unreadCount); ?></span>
         <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+=======
+        <?php if($unreadCount > 0): ?>
+            <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-red-600 rounded-full"><?php echo e($unreadCount); ?></span>
+        <?php endif; ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
     </button>
 
     <!-- Popover -->
@@ -33,7 +39,11 @@
             <button wire:click="markAllAsRead" class="text-xs text-blue-600 hover:underline">Tandai semua sudah dibaca</button>
         </div>
         <ul class="max-h-96 overflow-y-auto divide-y divide-gray-200 dark:divide-gray-700">
+<<<<<<< HEAD
             <!--[if BLOCK]><![endif]--><?php $__empty_1 = true; $__currentLoopData = $notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+=======
+            <?php $__empty_1 = true; $__currentLoopData = $notifications; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $notification): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
                 <?php
                     $data = $notification->data;
                     $type = $data['type'] ?? '';
@@ -65,14 +75,24 @@
                             <p class="text-xs text-gray-500 dark:text-gray-400 mt-1"><?php echo e($data['body'] ?? ''); ?></p>
                             <span class="text-xs text-gray-400 dark:text-gray-500"><?php echo e($notification->created_at->diffForHumans()); ?></span>
                         </div>
+<<<<<<< HEAD
                         <!--[if BLOCK]><![endif]--><?php if($notification->read_at === null): ?>
                             <span class="ml-2 w-2 h-2 bg-red-500 rounded-full"></span>
                         <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+=======
+                        <?php if($notification->read_at === null): ?>
+                            <span class="ml-2 w-2 h-2 bg-red-500 rounded-full"></span>
+                        <?php endif; ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
                     </a>
                 </li>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
                 <li class="px-4 py-6 text-center text-gray-500 dark:text-gray-400">Tidak ada notifikasi</li>
+<<<<<<< HEAD
             <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+=======
+            <?php endif; ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
         </ul>
         <div class="p-2 border-t border-gray-200 dark:border-gray-700 text-center">
             <a href="<?php echo e(url('/admin/notifications')); ?>" class="text-xs text-blue-600 hover:underline">Lihat semua notifikasi</a>

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <!--[if BLOCK]><![endif]--><?php if(filament()->hasUnsavedChangesAlerts()): ?>
+=======
+<?php if(filament()->hasUnsavedChangesAlerts()): ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
         <?php
         $__scriptKey = '1051602741-0';
         ob_start();
@@ -41,5 +45,9 @@
 
         \Livewire\store($this)->push('scripts', $__output, $__scriptKey)
     ?>
+<<<<<<< HEAD
 <?php endif; ?><!--[if ENDBLOCK]><![endif]-->
+=======
+<?php endif; ?>
+>>>>>>> 6ad12440d924f1a0aa1d26348cd63a38329565ff
 <?php /**PATH /Users/muhamadprasetyo/Project-bakmi/absensi-bakmi/effiwork17-lastupdate/laravel-absensi-backend-master/resources/views/vendor/filament-panels/components/unsaved-action-changes-alert.blade.php ENDPATH**/ ?>
