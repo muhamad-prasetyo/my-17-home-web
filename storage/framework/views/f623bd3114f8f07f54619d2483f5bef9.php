@@ -1,0 +1,1 @@
+<?php echo app('Illuminate\Foundation\Vite')(['resources/js/app.js']); ?><?php /**PATH /Users/muhamadprasetyo/Project-bakmi/absensi-bakmi/effiwork17-lastupdate/laravel-absensi-backend-master/storage/framework/views/33336dd02b585675f15d1013066ae4e0.blade.php ENDPATH**/ ?>

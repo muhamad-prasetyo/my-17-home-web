@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Angular and Vue.js routes...
+    RewriteCond %{REQUEST_URI} ^/().*$
+    RewriteRule ^(.+)$ /index.php/$1 [L]
+
+    # Handle Laravel routes...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
