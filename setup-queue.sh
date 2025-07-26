@@ -20,7 +20,9 @@ if ! command -v supervisorctl &> /dev/null; then
     elif command -v apt-get &> /dev/null; then
         # Ubuntu/Debian
         sudo apt-get update
-        sudo apt-get install -y supervisor
+        # Install supervisor dengan auto-confirm untuk keep existing config
+        echo "supervisor supervisor/keep_existing_config boolean true" | sudo debconf-set-selections
+        sudo DEBIAN_FRONTEND=noninteractive apt-get install -y supervisor
     fi
 fi
 

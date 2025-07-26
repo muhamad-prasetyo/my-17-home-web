@@ -17,19 +17,22 @@ class TestQueueCommand extends Command
 
         // Test Firebase Notification Job
         $this->info('📱 Dispatching Firebase Notification Job...');
-        SendFirebaseNotification::dispatch([
-            'title' => 'Test Notification',
-            'body' => 'Queue system is working!',
-            'user_id' => 1
-        ]);
+        SendFirebaseNotification::dispatch(
+            1, // userId
+            'Test Notification', // title
+            'Queue system is working!', // body
+            [], // data
+            null // attendanceId
+        );
 
         // Test Attendance Report Job
         $this->info('📊 Dispatching Attendance Report Job...');
         ProcessAttendanceReport::dispatch(1, date('Y-m-d'));
 
-        $this->info('✅ Jobs dispatched! Check queue status with: php artisan queue:monitor');
+        $this->info('✅ Jobs dispatched! Check queue status with: php artisan queue:work --once');
         
         // Show queue status
-        $this->call('queue:monitor');
+        $this->info('📊 Current queue status:');
+        $this->call('queue:work', ['--once' => true]);
     }
 }
